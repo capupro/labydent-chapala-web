@@ -72,16 +72,16 @@ const HeroSection = () => {
             </div>
           </div>
 
-          {/* Image/Visual */}
+          {/* Image/Visual - Más pequeña */}
           <div className="relative lg:order-last animate-scale-in">
-            <div className="relative bg-gradient-to-br from-labydent-cream to-white dark:from-gray-800 dark:to-gray-700 rounded-3xl p-8 shadow-2xl">
-              {/* Placeholder for hero image - replace with actual dental clinic photos */}
-              <div className="bg-gradient-to-br from-labydent-gold/20 to-labydent-gold-light/20 rounded-2xl aspect-square flex items-center justify-center">
+            <div className="relative bg-gradient-to-br from-labydent-cream to-white dark:from-gray-800 dark:to-gray-700 rounded-3xl p-6 shadow-2xl max-w-md mx-auto">
+              {/* Imagen más pequeña */}
+              <div className="bg-gradient-to-br from-labydent-gold/20 to-labydent-gold-light/20 rounded-2xl aspect-video flex items-center justify-center">
                 <div className="text-center">
                   <img 
                     src="/lovable-uploads/52a908f0-c5a9-48f9-bb71-99a5e75234eb.png" 
                     alt="Labydent Excellence" 
-                    className="h-32 w-auto mx-auto mb-4 opacity-80"
+                    className="h-20 w-auto mx-auto mb-4 opacity-80"
                   />
                   <p className="text-labydent-gold font-medium">Excelencia Dental</p>
                   <p className="text-sm text-gray-600 dark:text-gray-400">Chapala, Jalisco</p>
@@ -89,11 +89,11 @@ const HeroSection = () => {
               </div>
 
               {/* Floating Elements */}
-              <div className="absolute -top-4 -right-4 bg-white dark:bg-gray-800 rounded-full p-4 shadow-lg">
-                <div className="w-6 h-6 bg-labydent-gold rounded-full"></div>
+              <div className="absolute -top-2 -right-2 bg-white dark:bg-gray-800 rounded-full p-3 shadow-lg">
+                <div className="w-4 h-4 bg-labydent-gold rounded-full"></div>
               </div>
-              <div className="absolute -bottom-4 -left-4 bg-labydent-gold rounded-full p-3">
-                <div className="w-4 h-4 bg-white rounded-full"></div>
+              <div className="absolute -bottom-2 -left-2 bg-labydent-gold rounded-full p-2">
+                <div className="w-3 h-3 bg-white rounded-full"></div>
               </div>
             </div>
           </div>

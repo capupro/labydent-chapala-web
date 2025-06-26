@@ -5,6 +5,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { useLanguage } from '@/contexts/LanguageContext';
+import { Link } from 'react-router-dom';
 
 const BlogSection = () => {
   const { t } = useLanguage();
@@ -24,7 +25,7 @@ const BlogSection = () => {
       date: '2024-01-15',
       author: 'Dr. Labydent',
       readTime: '5 min',
-      image: 'dental-care'
+      image: 'https://images.unsplash.com/photo-1606811841689-23dfddce3e95?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'
     },
     {
       id: 2,
@@ -40,7 +41,7 @@ const BlogSection = () => {
       date: '2024-01-10',
       author: 'Dr. Labydent',
       readTime: '7 min',
-      image: 'whitening'
+      image: 'https://images.unsplash.com/photo-1622253692010-333f2da6031d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'
     },
     {
       id: 3,
@@ -56,7 +57,7 @@ const BlogSection = () => {
       date: '2024-01-05',
       author: 'Dr. Labydent',
       readTime: '6 min',
-      image: 'technology'
+      image: 'https://images.unsplash.com/photo-1581595220892-b0739db3ba8c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'
     }
   ];
 
@@ -84,16 +85,13 @@ const BlogSection = () => {
               className="dental-card group hover:scale-105 transition-all duration-300 animate-fade-in overflow-hidden"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
-              {/* Image Placeholder */}
-              <div className="aspect-video bg-gradient-to-br from-labydent-gold/20 to-labydent-gold-light/20 relative overflow-hidden">
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="text-center">
-                    <div className="w-16 h-16 bg-labydent-gold/30 rounded-full flex items-center justify-center mx-auto mb-3">
-                      <span className="text-2xl">📝</span>
-                    </div>
-                    <p className="text-labydent-gold font-medium">{post.image}</p>
-                  </div>
-                </div>
+              {/* Image */}
+              <div className="aspect-video relative overflow-hidden">
+                <img
+                  src={post.image}
+                  alt={post.title[language]}
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                />
                 
                 {/* Category Badge */}
                 <div className="absolute top-4 left-4">
@@ -124,43 +122,18 @@ const BlogSection = () => {
                   {post.excerpt[language]}
                 </CardDescription>
                 
-                <Button 
-                  variant="ghost" 
-                  className="text-labydent-gold hover:text-labydent-gold-dark p-0 h-auto font-medium group"
-                >
-                  {t('blog.readmore')}
-                  <ArrowRight className="h-4 w-4 ml-2 group-hover:translate-x-1 transition-transform" />
-                </Button>
+                <Link to={`/blog/${post.id}`}>
+                  <Button 
+                    variant="ghost" 
+                    className="text-labydent-gold hover:text-labydent-gold-dark p-0 h-auto font-medium group"
+                  >
+                    {t('blog.readmore')}
+                    <ArrowRight className="h-4 w-4 ml-2 group-hover:translate-x-1 transition-transform" />
+                  </Button>
+                </Link>
               </CardContent>
             </Card>
           ))}
-        </div>
-
-        {/* Newsletter Signup */}
-        <div className="bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-lg animate-fade-in">
-          <div className="text-center max-w-2xl mx-auto">
-            <h3 className="text-2xl font-bold font-montserrat mb-4 text-gray-800 dark:text-white">
-              Mantente Informado
-            </h3>
-            <p className="text-gray-600 dark:text-gray-300 mb-6">
-              Suscríbete a nuestro newsletter y recibe consejos de salud dental, promociones especiales y novedades de nuestra clínica.
-            </p>
-            
-            <div className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
-              <input
-                type="email"
-                placeholder="Tu correo electrónico"
-                className="flex-1 px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-800 dark:text-white focus:outline-none focus:ring-2 focus:ring-labydent-gold"
-              />
-              <Button className="labydent-gradient text-white hover:opacity-90 transition-opacity px-8">
-                Suscribirse
-              </Button>
-            </div>
-            
-            <p className="text-xs text-gray-500 dark:text-gray-400 mt-3">
-              No enviamos spam. Puedes darte de baja en cualquier momento.
-            </p>
-          </div>
         </div>
 
         {/* Popular Topics */}

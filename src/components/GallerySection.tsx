@@ -8,32 +8,51 @@ import { useLanguage } from '@/contexts/LanguageContext';
 const GallerySection = () => {
   const { t } = useLanguage();
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [currentImageSlide, setCurrentImageSlide] = useState(0);
 
-  // Placeholder data - replace with actual patient photos and testimonials
-  const beforeAfter = [
+  // Imágenes de la galería con URLs reales
+  const galleryImages = [
     {
       id: 1,
-      title: 'Sonrisa Perfecta',
-      description: 'Tratamiento completo de estética dental',
-      category: 'Estética'
+      title: 'Consulta Dental Moderna',
+      description: 'Nuestras instalaciones equipadas con tecnología de vanguardia',
+      imageUrl: 'https://images.unsplash.com/photo-1606811841689-23dfddce3e95?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+      category: 'Instalaciones'
     },
     {
       id: 2,
-      title: 'Ortodoncia Exitosa',
-      description: 'Alineación dental con brackets invisibles',
-      category: 'Ortodoncia'
+      title: 'Sonrisa Perfecta',
+      description: 'Resultado de tratamiento de estética dental',
+      imageUrl: 'https://images.unsplash.com/photo-1622253692010-333f2da6031d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+      category: 'Resultados'
     },
     {
       id: 3,
-      title: 'Implante Dental',
-      description: 'Reemplazo de pieza perdida',
-      category: 'Implantes'
+      title: 'Tecnología Avanzada',
+      description: 'Equipo dental de última generación',
+      imageUrl: 'https://images.unsplash.com/photo-1581595220892-b0739db3ba8c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+      category: 'Tecnología'
     },
     {
       id: 4,
-      title: 'Blanqueamiento',
-      description: 'Aclaramiento dental profesional',
-      category: 'Estética'
+      title: 'Atención Personalizada',
+      description: 'Nuestro equipo de especialistas',
+      imageUrl: 'https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+      category: 'Equipo'
+    },
+    {
+      id: 5,
+      title: 'Ambiente Cálido',
+      description: 'Sala de espera cómoda y acogedora',
+      imageUrl: 'https://images.unsplash.com/photo-1551190822-a9333d879b1f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+      category: 'Instalaciones'
+    },
+    {
+      id: 6,
+      title: 'Tratamientos Especializados',
+      description: 'Ortodoncia y estética dental',
+      imageUrl: 'https://images.unsplash.com/photo-1629909613654-28e377c37b09?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+      category: 'Tratamientos'
     }
   ];
 
@@ -69,6 +88,23 @@ const GallerySection = () => {
     setCurrentSlide((prev) => (prev - 1 + testimonials.length) % testimonials.length);
   };
 
+  const nextImageSlide = () => {
+    setCurrentImageSlide((prev) => (prev + 1) % galleryImages.length);
+  };
+
+  const prevImageSlide = () => {
+    setCurrentImageSlide((prev) => (prev - 1 + galleryImages.length) % galleryImages.length);
+  };
+
+  const visibleImages = () => {
+    const images = [];
+    for (let i = 0; i < 3; i++) {
+      const index = (currentImageSlide + i) % galleryImages.length;
+      images.push(galleryImages[index]);
+    }
+    return images;
+  };
+
   return (
     <section id="gallery" className="py-20 bg-white dark:bg-gray-900">
       <div className="container mx-auto px-4">
@@ -78,43 +114,74 @@ const GallerySection = () => {
             <span className="labydent-text-gradient">Galería y Testimonios</span>
           </h2>
           <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-            Conoce los resultados que hemos logrado y las experiencias de nuestros pacientes
+            Conoce nuestras instalaciones y las experiencias de nuestros pacientes
           </p>
           <div className="w-24 h-1 bg-labydent-gold mx-auto mt-6 rounded-full"></div>
         </div>
 
-        {/* Before/After Gallery */}
+        {/* Carrusel de Imágenes */}
         <div className="mb-20">
           <h3 className="text-2xl font-bold font-montserrat text-center mb-8 text-gray-800 dark:text-white">
-            Transformaciones
+            Nuestras Instalaciones
           </h3>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {beforeAfter.map((item, index) => (
-              <Card 
-                key={item.id}
-                className="dental-card group overflow-hidden hover:scale-105 transition-all duration-300 animate-fade-in"
-                style={{ animationDelay: `${index * 0.1}s` }}
-              >
-                <div className="aspect-square bg-gradient-to-br from-labydent-gold/20 to-labydent-gold-light/20 relative overflow-hidden">
-                  {/* Placeholder for before/after image */}
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="text-center">
-                      <div className="w-16 h-16 bg-labydent-gold/30 rounded-full flex items-center justify-center mx-auto mb-3">
-                        <span className="text-2xl">✨</span>
+          
+          <div className="relative max-w-6xl mx-auto">
+            <div className="overflow-hidden rounded-2xl shadow-2xl">
+              <div className="flex transition-transform duration-500 ease-in-out">
+                {visibleImages().map((image, index) => (
+                  <div key={image.id} className="w-1/3 flex-shrink-0 px-2">
+                    <div className="relative group">
+                      <img
+                        src={image.imageUrl}
+                        alt={image.title}
+                        className="w-full h-64 object-cover rounded-lg transition-transform duration-300 group-hover:scale-105"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <div className="absolute bottom-4 left-4 text-white">
+                          <h4 className="font-semibold text-lg">{image.title}</h4>
+                          <p className="text-sm opacity-90">{image.description}</p>
+                          <span className="inline-block mt-2 px-2 py-1 bg-labydent-gold text-xs rounded-full">
+                            {image.category}
+                          </span>
+                        </div>
                       </div>
-                      <p className="text-labydent-gold font-medium">{item.category}</p>
                     </div>
                   </div>
-                  
-                  {/* Overlay */}
-                  <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300"></div>
-                </div>
-                <CardContent className="p-4">
-                  <h4 className="font-semibold text-gray-800 dark:text-white mb-2">{item.title}</h4>
-                  <p className="text-sm text-gray-600 dark:text-gray-300">{item.description}</p>
-                </CardContent>
-              </Card>
-            ))}
+                ))}
+              </div>
+            </div>
+
+            {/* Controles del carrusel */}
+            <Button
+              variant="ghost"
+              size="sm"
+              onClick={prevImageSlide}
+              className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-white/90 dark:bg-gray-800/90 shadow-lg hover:bg-white dark:hover:bg-gray-800 rounded-full w-12 h-12"
+            >
+              <ChevronLeft className="h-6 w-6" />
+            </Button>
+            
+            <Button
+              variant="ghost"
+              size="sm"
+              onClick={nextImageSlide}
+              className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-white/90 dark:bg-gray-800/90 shadow-lg hover:bg-white dark:hover:bg-gray-800 rounded-full w-12 h-12"
+            >
+              <ChevronRight className="h-6 w-6" />
+            </Button>
+
+            {/* Indicadores */}
+            <div className="flex justify-center mt-6 space-x-2">
+              {galleryImages.map((_, index) => (
+                <button
+                  key={index}
+                  onClick={() => setCurrentImageSlide(index)}
+                  className={`w-3 h-3 rounded-full transition-colors ${
+                    index === currentImageSlide ? 'bg-labydent-gold' : 'bg-gray-300 dark:bg-gray-600'
+                  }`}
+                />
+              ))}
+            </div>
           </div>
         </div>
 

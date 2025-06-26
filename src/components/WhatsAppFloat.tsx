@@ -4,7 +4,7 @@ import { MessageCircle } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 const WhatsAppFloat = () => {
-  const whatsappNumber = '523761234567';
+  const whatsappNumber = '523319434231';
   const message = 'Hola! Me interesa agendar una cita en Labydent Chapala.';
   
   const handleWhatsAppClick = () => {

@@ -10,19 +10,19 @@ const Footer = () => {
   const socialLinks = [
     {
       icon: Facebook,
-      href: 'https://facebook.com/labydentchapala',
+      href: 'https://www.facebook.com/labydent.consultorio.dental',
       label: 'Facebook',
       color: 'hover:text-blue-600'
     },
     {
       icon: Instagram,
-      href: 'https://instagram.com/labydentchapala',
+      href: 'https://www.instagram.com/labydent_chapala/',
       label: 'Instagram',
       color: 'hover:text-pink-600'
     },
     {
       icon: MessageCircle,
-      href: 'https://wa.me/523761234567',
+      href: 'https://wa.me/523319434231',
       label: 'WhatsApp',
       color: 'hover:text-green-600'
     }
@@ -134,56 +134,32 @@ const Footer = () => {
             </h3>
             <div className="space-y-4">
               <a 
-                href="tel:+523761234567"
+                href="tel:+523319434231"
                 className="flex items-center text-gray-300 hover:text-labydent-gold transition-colors duration-200"
               >
                 <Phone className="h-5 w-5 mr-3" />
-                +52 376 123 4567
+                33 1943 4231
               </a>
               
               <a 
-                href="mailto:info@labydentchapala.com"
+                href="mailto:Cdpaolar@outlook.es"
                 className="flex items-center text-gray-300 hover:text-labydent-gold transition-colors duration-200"
               >
                 <Mail className="h-5 w-5 mr-3" />
-                info@labydentchapala.com
+                Cdpaolar@outlook.es
               </a>
 
               <div className="flex items-start text-gray-300">
                 <MapPin className="h-5 w-5 mr-3 mt-1 flex-shrink-0" />
-                <span>Chapala, Jalisco, México</span>
+                <span>Avenida Francisco I Madero 457-a<br />Chapala, Jalisco, México</span>
               </div>
 
               <div className="text-gray-300">
                 <p className="font-medium text-labydent-gold mb-1">Horarios:</p>
-                <p className="text-sm">Lun - Vie: 9:00 - 18:00</p>
-                <p className="text-sm">Sáb: 9:00 - 14:00</p>
+                <p className="text-sm">Lun - Vie: 09:00 - 19:30</p>
+                <p className="text-sm">Sáb: 09:00 - 14:00</p>
+                <p className="text-sm">Dom: Cerrado</p>
               </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/* Newsletter Section */}
-      <div className="border-t border-gray-800">
-        <div className="container mx-auto px-4 py-8">
-          <div className="text-center">
-            <h3 className="font-montserrat font-semibold text-xl mb-4 text-labydent-gold">
-              {t('footer.follow')}
-            </h3>
-            <p className="text-gray-300 mb-6 max-w-2xl mx-auto">
-              Mantente al día con nuestros consejos de salud dental, promociones especiales y novedades de la clínica.
-            </p>
-            
-            <div className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
-              <input
-                type="email"
-                placeholder="Tu correo electrónico"
-                className="flex-1 px-4 py-3 rounded-lg bg-gray-800 border border-gray-700 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-labydent-gold focus:border-transparent"
-              />
-              <Button className="labydent-gradient text-white hover:opacity-90 transition-opacity px-8">
-                Suscribirse
-              </Button>
             </div>
           </div>
         </div>
@@ -194,7 +170,7 @@ const Footer = () => {
         <div className="container mx-auto px-4 py-6">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <p className="text-gray-400 text-sm">
-              {t('footer.text')}
+              © 2024 Labydent Chapala. Todos los derechos reservados.
             </p>
             
             <div className="flex items-center space-x-6 mt-4 md:mt-0">
