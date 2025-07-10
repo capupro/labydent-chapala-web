@@ -95,7 +95,7 @@ const Footer = () => {
           {/* Quick Links */}
           <div>
             <h3 className="font-montserrat font-semibold text-lg mb-6 text-labydent-gold">
-              Enlaces Rápidos
+               {t('hero.enlaces')}
             </h3>
             <ul className="space-y-3">
               {quickLinks.map((link) => (
@@ -130,7 +130,7 @@ const Footer = () => {
           {/* Contact Info */}
           <div>
             <h3 className="font-montserrat font-semibold text-lg mb-6 text-labydent-gold">
-              Contacto
+              {t('hero.medio')}
             </h3>
             <div className="space-y-4">
               <a 

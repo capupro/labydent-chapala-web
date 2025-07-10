@@ -59,7 +59,7 @@ const HeroSection = () => {
             <div className="grid grid-cols-3 gap-6 mt-12 pt-8 border-t border-gray-200 dark:border-gray-700">
               <div className="text-center">
                 <div className="text-2xl md:text-3xl font-bold text-labydent-gold font-montserrat">15+</div>
-                <div className="text-sm text-gray-600 dark:text-gray-400 mt-1">Años de experiencia</div>
+                <div className="text-sm text-gray-600 dark:text-gray-400 mt-1"> {t('hero.cta2')}</div>
               </div>
               <div className="text-center">
                 <div className="text-2xl md:text-3xl font-bold text-labydent-gold font-montserrat">5000+</div>

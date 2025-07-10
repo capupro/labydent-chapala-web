@@ -63,8 +63,8 @@ const AboutSection = () => {
                   <div className="w-2 h-2 bg-white rounded-full"></div>
                 </div>
                 <div>
-                  <h4 className="font-semibold text-gray-800 dark:text-white mb-1">Misión</h4>
-                  <p className="text-gray-600 dark:text-gray-300">Transformar sonrisas y mejorar la calidad de vida de nuestros pacientes con tratamientos de excelencia.</p>
+                  <h4 className="font-semibold text-gray-800 dark:text-white mb-1" >{t('hero.mision')}</h4>
+                  <p className="text-gray-600 dark:text-gray-300">{t('hero.descripcion')}</p>
                 </div>
               </div>
               
@@ -73,8 +73,8 @@ const AboutSection = () => {
                   <div className="w-2 h-2 bg-white rounded-full"></div>
                 </div>
                 <div>
-                  <h4 className="font-semibold text-gray-800 dark:text-white mb-1">Visión</h4>
-                  <p className="text-gray-600 dark:text-gray-300">Ser la clínica dental líder en Chapala, reconocida por nuestra innovación y calidez humana.</p>
+                  <h4 className="font-semibold text-gray-800 dark:text-white mb-1">{t('hero.Vision')}</h4>
+                  <p className="text-gray-600 dark:text-gray-300">{t('hero.hola')}</p>
                 </div>
               </div>
             </div>
@@ -129,31 +129,34 @@ const AboutSection = () => {
         {/* Team Section */}
         <div className="mt-20 text-center">
           <h3 className="text-2xl font-bold font-montserrat mb-8 text-gray-800 dark:text-white">
-            Nuestro Compromiso
+            
+            {t('hero.contacto')}
+             {t('hero.cosa')}
+
           </h3>
           <div className="grid md:grid-cols-3 gap-8">
             <div className="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-lg">
               <div className="w-12 h-12 bg-blue-100 dark:bg-blue-900 rounded-full flex items-center justify-center mx-auto mb-4">
                 <Award className="h-6 w-6 text-blue-600" />
               </div>
-              <h4 className="font-semibold text-gray-800 dark:text-white mb-2">Calidad Certificada</h4>
-              <p className="text-gray-600 dark:text-gray-300">Tratamientos con los más altos estándares de calidad y seguridad.</p>
+              <h4 className="font-semibold text-gray-800 dark:text-white mb-2">  {t('hero.calidad')}</h4>
+              <p className="text-gray-600 dark:text-gray-300">{t('hero.tratamientos')}</p>
             </div>
             
             <div className="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-lg">
               <div className="w-12 h-12 bg-green-100 dark:bg-green-900 rounded-full flex items-center justify-center mx-auto mb-4">
                 <Heart className="h-6 w-6 text-green-600" />
               </div>
-              <h4 className="font-semibold text-gray-800 dark:text-white mb-2">Atención Personalizada</h4>
-              <p className="text-gray-600 dark:text-gray-300">Cada paciente recibe un plan de tratamiento único y personalizado.</p>
+              <h4 className="font-semibold text-gray-800 dark:text-white mb-2">{t('hero.atencion')}</h4>
+              <p className="text-gray-600 dark:text-gray-300">{t('Cada paciente recibe un plan de tratamiento unico y personalizado')}</p>
             </div>
             
             <div className="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-lg">
               <div className="w-12 h-12 bg-purple-100 dark:bg-purple-900 rounded-full flex items-center justify-center mx-auto mb-4">
                 <Users className="h-6 w-6 text-purple-600" />
               </div>
-              <h4 className="font-semibold text-gray-800 dark:text-white mb-2">Equipo Especializado</h4>
-              <p className="text-gray-600 dark:text-gray-300">Profesionales con especialización en diferentes áreas odontológicas.</p>
+              <h4 className="font-semibold text-gray-800 dark:text-white mb-2">{t('hero.equipo')}</h4>
+              <p className="text-gray-600 dark:text-gray-300">{t('hero.cada')}</p>
             </div>
           </div>
         </div>

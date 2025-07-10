@@ -77,7 +77,7 @@ const ServicesSection = () => {
         <div className="mt-16 bg-gradient-to-r from-labydent-cream to-white dark:from-gray-800 dark:to-gray-700 rounded-2xl p-8 animate-fade-in">
           <div className="text-center">
             <h3 className="text-2xl font-bold font-montserrat mb-4 text-gray-800 dark:text-white">
-              También ofrecemos
+                {t('Temas Populares')}
             </h3>
             <div className="grid md:grid-cols-3 gap-6 text-gray-700 dark:text-gray-300">
               <div className="flex items-center justify-center space-x-2">

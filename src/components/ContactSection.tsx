@@ -45,10 +45,10 @@ const ContactSection = () => {
         {/* Header */}
         <div className="text-center mb-16 animate-fade-in">
           <h2 className="text-3xl md:text-4xl font-bold font-montserrat mb-4">
-            <span className="labydent-text-gradient">Contacto</span>
+            <span className="labydent-text-gradient">{t('hero.medio')}</span>
           </h2>
           <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-            ¿Listo para transformar tu sonrisa? Contáctanos hoy mismo
+            {t('hero.listo')}
           </p>
           <div className="w-24 h-1 bg-labydent-gold mx-auto mt-6 rounded-full"></div>
         </div>
@@ -93,12 +93,12 @@ const ContactSection = () => {
             <Card className="dental-card max-w-2xl mx-auto bg-gradient-to-r from-labydent-gold/10 to-labydent-gold-light/10 border-labydent-gold/20">
               <CardHeader>
                 <CardTitle className="text-2xl font-montserrat text-gray-800 dark:text-white">
-                  ¡Agenda tu cita ahora!
+                   {t('hero.cita')}
                 </CardTitle>
               </CardHeader>
               <CardContent className="pb-8">
                 <p className="text-gray-600 dark:text-gray-300 mb-6">
-                  Llámanos directamente y agenda tu consulta. Nuestro equipo te atenderá con gusto.
+                  {t('hero.llamanos')}
                 </p>
                 
                 <Button 
@@ -144,7 +144,7 @@ const ContactSection = () => {
           {/* Google Maps */}
           <Card className="dental-card mb-12">
             <CardHeader>
-              <CardTitle className="text-gray-800 dark:text-white">Nuestra Ubicación</CardTitle>
+              <CardTitle className="text-gray-800 dark:text-white">{t('hero.nuestra')}</CardTitle>
             </CardHeader>
             <CardContent>
               <div className="aspect-video rounded-lg overflow-hidden">
@@ -165,10 +165,10 @@ const ContactSection = () => {
           {/* Emergency Contact */}
           <div className="text-center bg-gradient-to-r from-red-50 to-red-100 dark:from-red-900/20 dark:to-red-800/20 rounded-2xl p-8">
             <h3 className="text-2xl font-bold font-montserrat mb-4 text-gray-800 dark:text-white">
-              ¿Emergencia Dental?
+               {t('hero.emergencia')}
             </h3>
             <p className="text-gray-600 dark:text-gray-300 mb-6">
-              Contáctanos durante nuestros horarios de atención para casos urgentes.
+              {t('hero.contactanos')}
             </p>
             <Button 
               size="lg"
@@ -177,7 +177,7 @@ const ContactSection = () => {
             >
               <a href="tel:+523319434231">
                 <Phone className="mr-2 h-5 w-5" />
-                Llamar por Emergencia
+                  {t('hero.llamar')}
               </a>
             </Button>
           </div>

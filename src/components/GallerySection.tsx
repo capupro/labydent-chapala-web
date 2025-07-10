@@ -16,42 +16,43 @@ const GallerySection = () => {
       id: 1,
       title: 'Consulta Dental Moderna',
       description: 'Nuestras instalaciones equipadas con tecnología de vanguardia',
-      imageUrl: 'https://images.unsplash.com/photo-1606811841689-23dfddce3e95?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+      imageUrl: 'lovable-uploads/2.jpg',
       category: 'Instalaciones'
     },
     {
       id: 2,
       title: 'Sonrisa Perfecta',
       description: 'Resultado de tratamiento de estética dental',
-      imageUrl: 'https://images.unsplash.com/photo-1622253692010-333f2da6031d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+      imageUrl: 'lovable-uploads/3.jpg',
       category: 'Resultados'
     },
     {
       id: 3,
       title: 'Tecnología Avanzada',
       description: 'Equipo dental de última generación',
-      imageUrl: 'https://images.unsplash.com/photo-1581595220892-b0739db3ba8c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+      imageUrl: 'lovable-uploads/4.jpg',
       category: 'Tecnología'
     },
     {
       id: 4,
       title: 'Atención Personalizada',
       description: 'Nuestro equipo de especialistas',
-      imageUrl: 'https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+      imageUrl: 'lovable-uploads/5.jpg',
       category: 'Equipo'
     },
     {
       id: 5,
       title: 'Ambiente Cálido',
       description: 'Sala de espera cómoda y acogedora',
-      imageUrl: 'https://images.unsplash.com/photo-1551190822-a9333d879b1f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-      category: 'Instalaciones'
+      imageUrl: 'lovable-uploads/6.jpg',
+      category: 'manejo'
     },
     {
       id: 6,
       title: 'Tratamientos Especializados',
       description: 'Ortodoncia y estética dental',
-      imageUrl: 'https://images.unsplash.com/photo-1629909613654-28e377c37b09?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+      imageUrl: 'lovable-uploads/7.jpg'
+      ,
       category: 'Tratamientos'
     }
   ];
@@ -61,21 +62,21 @@ const GallerySection = () => {
       id: 1,
       name: 'María González',
       rating: 5,
-      text: 'Excelente atención, el Dr. y su equipo son muy profesionales. Mi experiencia fue increíble, quedé muy satisfecha con mi tratamiento.',
+      text: 'testimonial.text1',
       treatment: 'Carillas de porcelana'
     },
     {
       id: 2,
       name: 'Carlos Mendoza',
       rating: 5,
-      text: 'La mejor clínica dental en Chapala. Tecnología de punta y un trato muy humano. Definitivamente la recomiendo.',
+      text: 'testimonial.text2',
       treatment: 'Implante dental'
     },
     {
       id: 3,
       name: 'Ana Rodríguez',
       rating: 5,
-      text: 'Estoy encantada con mi nueva sonrisa. El equipo de Labydent hizo un trabajo excepcional. Muchas gracias!',
+      text: 'testimonial.text3',
       treatment: 'Ortodoncia invisible'
     }
   ];
@@ -111,10 +112,12 @@ const GallerySection = () => {
         {/* Header */}
         <div className="text-center mb-16 animate-fade-in">
           <h2 className="text-3xl md:text-4xl font-bold font-montserrat mb-4">
-            <span className="labydent-text-gradient">Galería y Testimonios</span>
+            <span className="labydent-text-gradient">{t('hero.galeria')}</span>
+
           </h2>
           <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-            Conoce nuestras instalaciones y las experiencias de nuestros pacientes
+            
+            {t('hero.conoce')}
           </p>
           <div className="w-24 h-1 bg-labydent-gold mx-auto mt-6 rounded-full"></div>
         </div>
@@ -122,7 +125,8 @@ const GallerySection = () => {
         {/* Carrusel de Imágenes */}
         <div className="mb-20">
           <h3 className="text-2xl font-bold font-montserrat text-center mb-8 text-gray-800 dark:text-white">
-            Nuestras Instalaciones
+            
+            
           </h3>
           
           <div className="relative max-w-6xl mx-auto">
@@ -188,7 +192,8 @@ const GallerySection = () => {
         {/* Testimonials Carousel */}
         <div className="bg-gradient-to-r from-labydent-cream to-white dark:from-gray-800 dark:to-gray-700 rounded-2xl p-8">
           <h3 className="text-2xl font-bold font-montserrat text-center mb-8 text-gray-800 dark:text-white">
-            Lo que dicen nuestros pacientes
+              
+            {t('hero.dicen')}
           </h3>
           
           <div className="relative max-w-4xl mx-auto">
@@ -210,7 +215,7 @@ const GallerySection = () => {
                         
                         {/* Quote */}
                         <blockquote className="text-lg text-gray-700 dark:text-gray-300 mb-6 italic leading-relaxed">
-                          "{testimonial.text}"
+                          "{t(testimonial.text)}"
                         </blockquote>
                         
                         {/* Author */}
@@ -266,7 +271,7 @@ const GallerySection = () => {
         {/* Call to Action */}
         <div className="text-center mt-12">
           <p className="text-gray-600 dark:text-gray-300 mb-4">
-            ¿Listo para transformar tu sonrisa?
+            {t('hero.listo')}
           </p>
           <Button 
             size="lg"
@@ -276,7 +281,7 @@ const GallerySection = () => {
               if (element) element.scrollIntoView({ behavior: 'smooth' });
             }}
           >
-            Agenda tu consulta gratuita
+             {t('hero.medio')}
           </Button>
         </div>
       </div>
