@@ -91,7 +91,7 @@ const AboutSection = () => {
                   className="h-24 w-auto mx-auto mb-4"
                 />
                 <h3 className="text-2xl font-bold text-gray-800 dark:text-white font-montserrat">
-                  Equipo Profesional
+                  Equipo Profesional 
                 </h3>
                 <p className="text-gray-600 dark:text-gray-300">
                   Especialistas certificados comprometidos con tu salud

@@ -37,6 +37,9 @@ const translations = {
 
 
     'hero.mision': 'Mision',
+
+    'hero.cada': 'Cada mienmbro de nuestro equipo esta capacitado',
+
     'hero.contacto': 'Nuestro Compromiso',
     'hero.atencion': 'Atencion personalizada',
     'hero.profecionales': 'profecionales con especializacion en diferentes areas odontologicas',
@@ -125,6 +128,7 @@ const translations = {
     'hero.contactanos': ' Contact us during our business hours for urgent cases.',
      'hero.llamar': 'Call for emergency',
          'hero.enlaces': 'Quick links',
+      'hero.cada': 'Each member of our team is trained',
 
       
     
@@ -133,7 +137,7 @@ const translations = {
     'hero.hola': 'To be the leading dental clinic in Chapala, recognized for our innovation and human warmth.fg',
     
     'hero.mision': 'Mission',
-    'hero.equipo': 'specialized equipment s',
+    'hero.equipo': 'specialized equipments',
     'hero.contacto': 'our commitment',
     'hero.item': 'We also offer',
     'hero.cosa': 'endodontics',
