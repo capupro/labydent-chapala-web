@@ -2,6 +2,7 @@
 import React from 'react';
 import { LanguageProvider } from '@/contexts/LanguageContext';
 import { ThemeProvider } from '@/contexts/ThemeContext';
+import SEOHead from '@/components/SEOHead';
 import Header from '@/components/Header';
 import HeroSection from '@/components/HeroSection';
 import ServicesSection from '@/components/ServicesSection';
@@ -16,6 +17,7 @@ const Index = () => {
   return (
     <ThemeProvider>
       <LanguageProvider>
+        <SEOHead />
         <div className="min-h-screen bg-background text-foreground">
           <Header />
           <main>

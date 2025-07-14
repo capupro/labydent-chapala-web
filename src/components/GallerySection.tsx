@@ -112,8 +112,7 @@ const GallerySection = () => {
         {/* Header */}
         <div className="text-center mb-16 animate-fade-in">
           <h2 className="text-3xl md:text-4xl font-bold font-montserrat mb-4">
-            <span className="labydent-text-gradient">{t('hero.galeria')}</span>
-
+            <span className="labydent-text-gradient">Galería de Labydent Chapala - Instalaciones y Resultados</span>
           </h2>
           <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
             
@@ -125,8 +124,7 @@ const GallerySection = () => {
         {/* Carrusel de Imágenes */}
         <div className="mb-20">
           <h3 className="text-2xl font-bold font-montserrat text-center mb-8 text-gray-800 dark:text-white">
-            
-            
+            Nuestras Instalaciones y Tratamientos Dentales
           </h3>
           
           <div className="relative max-w-6xl mx-auto">
@@ -137,8 +135,9 @@ const GallerySection = () => {
                     <div className="relative group">
                       <img
                         src={image.imageUrl}
-                        alt={image.title}
+                        alt={`${image.title} - ${image.description} en Labydent Chapala, clínica dental especializada`}
                         className="w-full h-64 object-cover rounded-lg transition-transform duration-300 group-hover:scale-105"
+                        loading="lazy"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                         <div className="absolute bottom-4 left-4 text-white">
@@ -192,8 +191,7 @@ const GallerySection = () => {
         {/* Testimonials Carousel */}
         <div className="bg-gradient-to-r from-labydent-cream to-white dark:from-gray-800 dark:to-gray-700 rounded-2xl p-8">
           <h3 className="text-2xl font-bold font-montserrat text-center mb-8 text-gray-800 dark:text-white">
-              
-            {t('hero.dicen')}
+            Testimonios de Pacientes de Labydent Chapala
           </h3>
           
           <div className="relative max-w-4xl mx-auto">

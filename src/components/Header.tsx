@@ -49,8 +49,9 @@ const Header = () => {
           <div className="flex items-center space-x-3">
             <img 
               src="/lovable-uploads/52a908f0-c5a9-48f9-bb71-99a5e75234eb.png" 
-              alt="Labydent Logo" 
+              alt="Labydent Chapala - Clínica Dental Especializada en Chapala, Jalisco" 
               className="h-12 w-auto"
+              loading="lazy"
             />
             <div className="font-montserrat font-bold text-2xl text-labydent-gold">
               Labydent

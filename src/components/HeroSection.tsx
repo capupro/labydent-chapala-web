@@ -28,7 +28,7 @@ const HeroSection = () => {
           {/* Content */}
           <div className="text-center lg:text-left animate-fade-in">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-montserrat font-bold mb-6 leading-tight">
-              <span className="labydent-text-gradient">{t('hero.title')}</span>
+              <span className="labydent-text-gradient">Clínica Dental Labydent en Chapala - Especialistas en Odontología</span>
             </h1>
             
             <p className="text-lg md:text-xl text-gray-600 dark:text-gray-300 mb-8 leading-relaxed max-w-2xl">
@@ -80,8 +80,9 @@ const HeroSection = () => {
                 <div className="text-center">
                   <img 
                     src="/lovable-uploads/52a908f0-c5a9-48f9-bb71-99a5e75234eb.png" 
-                    alt="Labydent Excellence" 
+                    alt="Labydent Chapala - Clínica Dental de Excelencia en Chapala, Jalisco" 
                     className="h-20 w-auto mx-auto mb-4 opacity-80"
+                    loading="lazy"
                   />
                   <p className="text-labydent-gold font-medium">Excelencia Dental</p>
                   <p className="text-sm text-gray-600 dark:text-gray-400">Chapala, Jalisco</p>

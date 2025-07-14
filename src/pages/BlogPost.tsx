@@ -4,6 +4,7 @@ import { useParams, Link } from 'react-router-dom';
 import { ArrowLeft, Calendar, User, Clock } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
+import SEOHead from '@/components/SEOHead';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import WhatsAppFloat from '@/components/WhatsAppFloat';
@@ -127,6 +128,14 @@ const BlogPost = () => {
   return (
     <ThemeProvider>
       <LanguageProvider>
+        <SEOHead 
+          title={`${post.title} | Labydent Chapala`}
+          description={post.content.replace(/<[^>]*>/g, '').substring(0, 160)}
+          url={`https://labydentchapala.com/blog/${id}`}
+          type="article"
+          publishedTime={post.date}
+          keywords={`${post.title}, dentista Chapala, odontología, salud dental, Labydent`}
+        />
         <div className="min-h-screen bg-background text-foreground">
           <Header />
           <WhatsAppFloat />
@@ -143,8 +152,9 @@ const BlogPost = () => {
               <div className="mb-8">
                 <img
                   src={post.image}
-                  alt={post.title}
+                  alt={`${post.title} - Consejos de salud dental de Labydent Chapala`}
                   className="w-full h-64 md:h-96 object-cover rounded-2xl shadow-lg"
+                  loading="lazy"
                 />
               </div>
 

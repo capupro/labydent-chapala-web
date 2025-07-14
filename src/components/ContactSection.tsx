@@ -45,7 +45,7 @@ const ContactSection = () => {
         {/* Header */}
         <div className="text-center mb-16 animate-fade-in">
           <h2 className="text-3xl md:text-4xl font-bold font-montserrat mb-4">
-            <span className="labydent-text-gradient">{t('hero.medio')}</span>
+            <span className="labydent-text-gradient">Contacta con Labydent Chapala - Agendar Cita Dental</span>
           </h2>
           <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
             {t('hero.listo')}

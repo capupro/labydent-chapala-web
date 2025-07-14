@@ -41,7 +41,7 @@ const AboutSection = () => {
           {/* Content */}
           <div className="animate-fade-in">
             <h2 className="text-3xl md:text-4xl font-bold font-montserrat mb-6">
-              <span className="labydent-text-gradient">{t('about.title')}</span>
+              <span className="labydent-text-gradient">Sobre Labydent Chapala - Tu Clínica Dental de Confianza</span>
             </h2>
             
             <h3 className="text-xl text-gray-700 dark:text-gray-300 mb-6 font-medium">

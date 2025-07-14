@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:news="http://www.google.com/schemas/sitemap-news/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml"
+        xmlns:mobile="http://www.google.com/schemas/sitemap-mobile/1.0"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+        xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
+  <url>
+    <loc>https://labydentchapala.com/</loc>
+    <lastmod>2024-01-15T10:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://labydentchapala.com/lovable-uploads/52a908f0-c5a9-48f9-bb71-99a5e75234eb.png</image:loc>
+      <image:title>Labydent Chapala - Clínica Dental</image:title>
+      <image:caption>Clínica dental de excelencia en Chapala, Jalisco</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://labydentchapala.com/blog/1</loc>
+    <lastmod>2024-01-15T10:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://images.unsplash.com/photo-1606811841689-23dfddce3e95?ixlib=rb-4.0.3&amp;auto=format&amp;fit=crop&amp;w=1200&amp;q=80</image:loc>
+      <image:title>5 Consejos para Mantener una Sonrisa Saludable</image:title>
+      <image:caption>Consejos de salud dental de Labydent Chapala</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://labydentchapala.com/blog/2</loc>
+    <lastmod>2024-01-10T10:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://images.unsplash.com/photo-1622253692010-333f2da6031d?ixlib=rb-4.0.3&amp;auto=format&amp;fit=crop&amp;w=1200&amp;q=80</image:loc>
+      <image:title>Mitos y Verdades sobre el Blanqueamiento Dental</image:title>
+      <image:caption>Información sobre blanqueamiento dental de Labydent Chapala</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://labydentchapala.com/blog/3</loc>
+    <lastmod>2024-01-05T10:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://images.unsplash.com/photo-1581595220892-b0739db3ba8c?ixlib=rb-4.0.3&amp;auto=format&amp;fit=crop&amp;w=1200&amp;q=80</image:loc>
+      <image:title>Tecnología Digital en Odontología</image:title>
+      <image:caption>Tecnología dental avanzada en Labydent Chapala</image:caption>
+    </image:image>
+  </url>
+</urlset>
