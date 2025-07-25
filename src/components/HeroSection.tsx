@@ -28,7 +28,7 @@ const HeroSection = () => {
           {/* Content */}
           <div className="text-center lg:text-left animate-fade-in">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-montserrat font-bold mb-6 leading-tight">
-              <span className="labydent-text-gradient">Clínica Dental Labydent en Chapala - Especialistas en Odontología</span>
+              <span className="labydent-text-gradient">Clínica Dental en Chapala</span>
             </h1>
             
             <p className="text-lg md:text-xl text-gray-600 dark:text-gray-300 mb-8 leading-relaxed max-w-2xl">
