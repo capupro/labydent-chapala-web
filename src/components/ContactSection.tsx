@@ -40,33 +40,33 @@ const ContactSection = () => {
   ];
 
   return (
-    <section id="contact" className="py-20 bg-white dark:bg-gray-900">
-      <div className="container mx-auto px-4">
+    <section id="contact" className="py-12 sm:py-16 lg:py-20 bg-white dark:bg-gray-900">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
-        <div className="text-center mb-16 animate-fade-in">
-          <h2 className="text-3xl md:text-4xl font-bold font-montserrat mb-4">
+        <div className="text-center mb-12 sm:mb-16 animate-fade-in">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold font-montserrat mb-4 px-2">
             <span className="labydent-text-gradient">Contacta con Labydent Chapala - Agendar Cita Dental</span>
           </h2>
-          <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+          <p className="text-lg sm:text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto px-4">
             {t('hero.listo')}
           </p>
-          <div className="w-24 h-1 bg-labydent-gold mx-auto mt-6 rounded-full"></div>
+          <div className="w-16 sm:w-24 h-1 bg-labydent-gold mx-auto mt-4 sm:mt-6 rounded-full"></div>
         </div>
 
-        <div className="max-w-4xl mx-auto">
-          {/* Contact Information */}
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+        <div className="max-w-6xl mx-auto">
+          {/* Contact Information - Responsive Grid */}
+          <div className="grid grid-cols-1 xs:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 mb-8 sm:mb-12">
             {contactInfo.map((info, index) => (
               <Card 
                 key={info.title}
-                className="dental-card hover:scale-105 transition-all duration-300 text-center"
+                className="dental-card hover:scale-105 transition-all duration-300 text-center min-h-[10rem] sm:min-h-[12rem]"
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
-                <CardContent className="p-6">
-                  <div className={`w-16 h-16 rounded-full bg-gray-100 dark:bg-gray-800 flex items-center justify-center ${info.color} mx-auto mb-4`}>
-                    <info.icon className="h-8 w-8" />
+                <CardContent className="p-4 sm:p-6 flex flex-col justify-center h-full">
+                  <div className={`w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 rounded-full bg-gray-100 dark:bg-gray-800 flex items-center justify-center ${info.color} mx-auto mb-3 sm:mb-4`}>
+                    <info.icon className="h-6 w-6 sm:h-7 sm:w-7 lg:h-8 lg:w-8" />
                   </div>
-                  <h4 className="font-semibold text-gray-800 dark:text-white mb-2 text-lg">
+                  <h4 className="font-semibold text-gray-800 dark:text-white mb-2 text-base sm:text-lg">
                     {info.title}
                   </h4>
                   {info.href ? (
@@ -74,12 +74,12 @@ const ContactSection = () => {
                       href={info.href}
                       target={info.href.includes('maps') ? '_blank' : undefined}
                       rel={info.href.includes('maps') ? 'noopener noreferrer' : undefined}
-                      className="text-gray-600 dark:text-gray-300 hover:text-labydent-gold transition-colors whitespace-pre-line block"
+                      className="text-gray-600 dark:text-gray-300 hover:text-labydent-gold transition-colors whitespace-pre-line block text-sm sm:text-base leading-relaxed"
                     >
                       {info.content}
                     </a>
                   ) : (
-                    <p className="text-gray-600 dark:text-gray-300 whitespace-pre-line">
+                    <p className="text-gray-600 dark:text-gray-300 whitespace-pre-line text-sm sm:text-base leading-relaxed">
                       {info.content}
                     </p>
                   )}
@@ -88,42 +88,42 @@ const ContactSection = () => {
             ))}
           </div>
 
-          {/* Interactive Call Button */}
-          <div className="text-center mb-12">
+          {/* Interactive Call Button - Responsive */}
+          <div className="text-center mb-8 sm:mb-12">
             <Card className="dental-card max-w-2xl mx-auto bg-gradient-to-r from-labydent-gold/10 to-labydent-gold-light/10 border-labydent-gold/20">
-              <CardHeader>
-                <CardTitle className="text-2xl font-montserrat text-gray-800 dark:text-white">
+              <CardHeader className="pb-4 sm:pb-6">
+                <CardTitle className="text-xl sm:text-2xl font-montserrat text-gray-800 dark:text-white">
                    {t('hero.cita')}
                 </CardTitle>
               </CardHeader>
-              <CardContent className="pb-8">
-                <p className="text-gray-600 dark:text-gray-300 mb-6">
+              <CardContent className="pb-6 sm:pb-8">
+                <p className="text-gray-600 dark:text-gray-300 mb-4 sm:mb-6 text-sm sm:text-base">
                   {t('hero.llamanos')}
                 </p>
                 
                 <Button 
                   size="lg"
-                  className="labydent-gradient text-white hover:opacity-90 transition-all duration-200 transform hover:scale-105 text-xl px-8 py-4 h-auto"
+                  className="labydent-gradient text-white hover:opacity-90 transition-all duration-200 transform hover:scale-105 text-base sm:text-lg lg:text-xl px-6 sm:px-8 py-3 sm:py-4 h-auto w-full sm:w-auto"
                   asChild
                 >
-                  <a href="tel:+523319434231" className="flex items-center">
-                    <Phone className="mr-3 h-6 w-6" />
-                    Llamar: 33 1943 4231
+                  <a href="tel:+523319434231" className="flex items-center justify-center">
+                    <Phone className="mr-2 sm:mr-3 h-5 w-5 sm:h-6 sm:w-6" />
+                    <span className="whitespace-nowrap">Llamar: 33 1943 4231</span>
                   </a>
                 </Button>
               </CardContent>
             </Card>
           </div>
 
-          {/* Quick Actions */}
-          <div className="grid md:grid-cols-2 gap-6 mb-12">
+          {/* Quick Actions - Responsive */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 mb-8 sm:mb-12">
             <Button 
               size="lg"
-              className="bg-green-600 hover:bg-green-700 text-white transition-colors h-16 text-lg"
+              className="bg-green-600 hover:bg-green-700 text-white transition-colors h-14 sm:h-16 text-base sm:text-lg"
               asChild
             >
               <a href="https://wa.me/523319434231" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center">
-                <MessageCircle className="mr-3 h-6 w-6" />
+                <MessageCircle className="mr-2 sm:mr-3 h-5 w-5 sm:h-6 sm:w-6" />
                 WhatsApp
               </a>
             </Button>
@@ -131,11 +131,11 @@ const ContactSection = () => {
             <Button 
               size="lg"
               variant="outline"
-              className="border-labydent-gold text-labydent-gold hover:bg-labydent-gold hover:text-white transition-colors h-16 text-lg"
+              className="border-labydent-gold text-labydent-gold hover:bg-labydent-gold hover:text-white transition-colors h-14 sm:h-16 text-base sm:text-lg"
               asChild
             >
               <a href="mailto:Cdpaolar@outlook.es" className="flex items-center justify-center">
-                <Mail className="mr-3 h-6 w-6" />
+                <Mail className="mr-2 sm:mr-3 h-5 w-5 sm:h-6 sm:w-6" />
                 Enviar Email
               </a>
             </Button>

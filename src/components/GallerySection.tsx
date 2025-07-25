@@ -107,81 +107,107 @@ const GallerySection = () => {
   };
 
   return (
-    <section id="gallery" className="py-20 bg-white dark:bg-gray-900">
-      <div className="container mx-auto px-4">
+    <section id="gallery" className="py-12 sm:py-16 lg:py-20 bg-white dark:bg-gray-900">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
-        <div className="text-center mb-16 animate-fade-in">
-          <h2 className="text-3xl md:text-4xl font-bold font-montserrat mb-4">
+        <div className="text-center mb-12 sm:mb-16 animate-fade-in">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold font-montserrat mb-4 px-2">
             <span className="labydent-text-gradient">Galería de Labydent Chapala - Instalaciones y Resultados</span>
           </h2>
-          <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-            
+          <p className="text-lg sm:text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto px-4">
             {t('hero.conoce')}
           </p>
-          <div className="w-24 h-1 bg-labydent-gold mx-auto mt-6 rounded-full"></div>
+          <div className="w-16 sm:w-24 h-1 bg-labydent-gold mx-auto mt-4 sm:mt-6 rounded-full"></div>
         </div>
 
-        {/* Carrusel de Imágenes */}
-        <div className="mb-20">
-          <h3 className="text-2xl font-bold font-montserrat text-center mb-8 text-gray-800 dark:text-white">
+        {/* Carrusel de Imágenes - Responsive */}
+        <div className="mb-16 sm:mb-20">
+          <h3 className="text-xl sm:text-2xl font-bold font-montserrat text-center mb-6 sm:mb-8 text-gray-800 dark:text-white px-4">
             Nuestras Instalaciones y Tratamientos Dentales
           </h3>
           
           <div className="relative max-w-6xl mx-auto">
-            <div className="overflow-hidden rounded-2xl shadow-2xl">
+            <div className="overflow-hidden rounded-xl sm:rounded-2xl shadow-2xl">
               <div className="flex transition-transform duration-500 ease-in-out">
-                {visibleImages().map((image, index) => (
-                  <div key={image.id} className="w-1/3 flex-shrink-0 px-2">
-                    <div className="relative group">
-                      <img
-                        src={image.imageUrl}
-                        alt={`${image.title} - ${image.description} en Labydent Chapala, clínica dental especializada`}
-                        className="w-full h-64 object-cover rounded-lg transition-transform duration-300 group-hover:scale-105"
-                        loading="lazy"
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                        <div className="absolute bottom-4 left-4 text-white">
-                          <h4 className="font-semibold text-lg">{image.title}</h4>
-                          <p className="text-sm opacity-90">{image.description}</p>
-                          <span className="inline-block mt-2 px-2 py-1 bg-labydent-gold text-xs rounded-full">
-                            {image.category}
-                          </span>
-                        </div>
+                {/* Mobile: Show 1 image, Tablet: 2 images, Desktop: 3 images */}
+                <div className="block sm:hidden w-full">
+                  <div className="relative group">
+                    <img
+                      src={galleryImages[currentImageSlide].imageUrl}
+                      alt={`${galleryImages[currentImageSlide].title} - ${galleryImages[currentImageSlide].description} en Labydent Chapala, clínica dental especializada`}
+                      className="w-full h-64 sm:h-72 object-cover transition-transform duration-300 group-hover:scale-105"
+                      loading="lazy"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                      <div className="absolute bottom-4 left-4 right-4 text-white">
+                        <h4 className="font-semibold text-base sm:text-lg">{galleryImages[currentImageSlide].title}</h4>
+                        <p className="text-sm opacity-90">{galleryImages[currentImageSlide].description}</p>
+                        <span className="inline-block mt-2 px-2 py-1 bg-labydent-gold text-xs rounded-full">
+                          {galleryImages[currentImageSlide].category}
+                        </span>
                       </div>
                     </div>
                   </div>
-                ))}
+                </div>
+                
+                {/* Tablet and Desktop view */}
+                <div className="hidden sm:flex w-full">
+                  {visibleImages().map((image, index) => (
+                    <div key={image.id} className="w-1/2 lg:w-1/3 flex-shrink-0 px-1 sm:px-2">
+                      <div className="relative group">
+                        <img
+                          src={image.imageUrl}
+                          alt={`${image.title} - ${image.description} en Labydent Chapala, clínica dental especializada`}
+                          className="w-full h-48 sm:h-56 lg:h-64 object-cover rounded-lg transition-transform duration-300 group-hover:scale-105"
+                          loading="lazy"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                          <div className="absolute bottom-2 sm:bottom-4 left-2 sm:left-4 right-2 sm:right-4 text-white">
+                            <h4 className="font-semibold text-sm sm:text-base lg:text-lg">{image.title}</h4>
+                            <p className="text-xs sm:text-sm opacity-90 line-clamp-2">{image.description}</p>
+                            <span className="inline-block mt-1 sm:mt-2 px-2 py-1 bg-labydent-gold text-xs rounded-full">
+                              {image.category}
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
               </div>
             </div>
 
-            {/* Controles del carrusel */}
+            {/* Controles del carrusel - Touch friendly */}
             <Button
               variant="ghost"
               size="sm"
               onClick={prevImageSlide}
-              className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-white/90 dark:bg-gray-800/90 shadow-lg hover:bg-white dark:hover:bg-gray-800 rounded-full w-12 h-12"
+              className="absolute left-2 sm:left-4 top-1/2 transform -translate-y-1/2 bg-white/90 dark:bg-gray-800/90 shadow-lg hover:bg-white dark:hover:bg-gray-800 rounded-full w-10 h-10 sm:w-12 sm:h-12"
+              aria-label="Previous image"
             >
-              <ChevronLeft className="h-6 w-6" />
+              <ChevronLeft className="h-4 w-4 sm:h-5 sm:w-5 lg:h-6 lg:w-6" />
             </Button>
             
             <Button
               variant="ghost"
               size="sm"
               onClick={nextImageSlide}
-              className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-white/90 dark:bg-gray-800/90 shadow-lg hover:bg-white dark:hover:bg-gray-800 rounded-full w-12 h-12"
+              className="absolute right-2 sm:right-4 top-1/2 transform -translate-y-1/2 bg-white/90 dark:bg-gray-800/90 shadow-lg hover:bg-white dark:hover:bg-gray-800 rounded-full w-10 h-10 sm:w-12 sm:h-12"
+              aria-label="Next image"
             >
-              <ChevronRight className="h-6 w-6" />
+              <ChevronRight className="h-4 w-4 sm:h-5 sm:w-5 lg:h-6 lg:w-6" />
             </Button>
 
-            {/* Indicadores */}
-            <div className="flex justify-center mt-6 space-x-2">
+            {/* Indicadores - Responsive */}
+            <div className="flex justify-center mt-4 sm:mt-6 space-x-1 sm:space-x-2">
               {galleryImages.map((_, index) => (
                 <button
                   key={index}
                   onClick={() => setCurrentImageSlide(index)}
-                  className={`w-3 h-3 rounded-full transition-colors ${
+                  className={`w-2 h-2 sm:w-3 sm:h-3 rounded-full transition-colors ${
                     index === currentImageSlide ? 'bg-labydent-gold' : 'bg-gray-300 dark:bg-gray-600'
                   }`}
+                  aria-label={`Go to image ${index + 1}`}
                 />
               ))}
             </div>
